@@ -11,6 +11,7 @@ using Microsoft.Owin.Security;
 using FBARefund.Models;
 using System.Data.Entity.Core.Metadata.Edm;
 using Microsoft.Ajax.Utilities;
+using System.Collections.Generic;
 
 namespace FBARefund.Controllers
 {
@@ -203,12 +204,43 @@ namespace FBARefund.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+            /*var rolesToAdd = new List<string>() { "Admin", "CaseManager", "Seller" };
+
+            rolesToAdd.ForEach(roleToAdd =>
+            {
+                var role = RoleManager.FindByName(roleToAdd);
+                if (role == null)
+                {
+                    role = new ApplicationRole(roleToAdd);
+                    var roleresult = RoleManager.Create(role);
+                }
+            });*/
+
+            //const string name = "adrianegulescu@gmail.com";
+            //const string password = "Parola123#";
+
+
+            //var usr = UserManager.FindByName(name);
+            //if (usr == null)
+            //{
+            //    usr = new ApplicationUser { UserName = name, Email = name };
+            //    var res = UserManager.Create(usr, password);
+            //    res = UserManager.SetLockoutEnabled(usr.Id, false);
+            //}
+
+            //// Add user admin to Role Admin if not already added
+            //var rolesForUser = UserManager.GetRoles(usr.Id);
+            //if (!rolesForUser.Contains("Admin"))
+            //{
+            //    var res = UserManager.AddToRole(usr.Id, "Admin");
+            //}
+
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
 
-                
+                // de scris cod sa adauge codurile mia intai
 
                 if (result.Succeeded)
                 {
