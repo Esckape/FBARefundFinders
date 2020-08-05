@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FBA Refund </title>
+    <meta name="description" content="FBA refund from Amazon">
+    <meta name="keywords" content="Amazon refund, FBA Refund">
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700%7CRoboto:300,400,500,600,700" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="~/assets/app/css/style.css" />
+    <script>
+        WebFont.load({
+            google: { "families": ["Montserrat:300,400,500,600,700", "Roboto:300,400,500,600,700"] },
+            active: function () {
+                sessionStorage.fonts = true;
+            }
+        });
+    </script>
+    <link href="~/assets/vendors/custom/fullcalendar/fullcalendar.bundle.css">
+    <link href="~/assets/app/css/style.css" rel="stylesheet" type="text/css">
+    <link href="~/assets/vendors/base/vendors.bundle.css" rel="stylesheet" type="text/css">
+    <link href="~/assets/demo/demo3/base/style.bundle.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="assets/demo/demo3/media/img/logo/favicon.ico">
+    <style type="text/css">
+        span.im-caret {
+            -webkit-animation: 1s blink step-end infinite;
+            animation: 1s blink step-end infinite;
+        }
+
+        @@keyframes blink {
+            from, to {
+                border-right-color: black;
+            }
+
+            50% {
+                border-right-color: transparent;
+            }
+        }
+
+        @@-webkit-keyframes blink {
+            from, to {
+                border-right-color: black;
+            }
+
+            50% {
+                border-right-color: transparent;
+            }
+        }
+
+        span.im-static {
+            color: grey;
+        }
+
+        div.im-colormask {
+            display: inline-block;
+            border-style: inset;
+            border-width: 2px;
+            -webkit-appearance: textfield;
+            -moz-appearance: textfield;
+            appearance: textfield;
+        }
+
+            div.im-colormask > input {
+                position: absolute;
+                display: inline-block;
+                background-color: transparent;
+                color: transparent;
+                -webkit-appearance: caret;
+                -moz-appearance: caret;
+                appearance: caret;
+                border-style: none;
+                left: 0; /*calculated*/
+            }
+
+                div.im-colormask > input:focus {
+                    outline: none;
+                }
+
+                div.im-colormask > input::-moz-selection {
+                    background: none;
+                }
+
+                div.im-colormask > input::selection {
+                    background: none;
+                }
+
+                div.im-colormask > input::-moz-selection {
+                    background: none;
+                }
+
+            div.im-colormask > div {
+                color: black;
+                display: inline-block;
+                width: 100px; /*calculated*/
+            }
+    </style>
+    <style type="text/css">
+        @@-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @@keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }
+    </style>
+
+</head>
+<body>
+    <header class="topnavbar-wrapper">
+        @{ await Html.RenderPartialAsync("_TopNavbar"); }
+    </header>
+    
+    <div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
+        @{ await Html.RenderPartialAsync("_Sidebar"); }
+        <div class="m-grid__item m-grid__item--fluid m-wrapper">
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2020 - FBARefundProject - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+        <script src="~/assets/vendors/base/vendors.bundle.js" type="text/javascript"></script>
+        <script src="~/assets/demo/demo3/base/scripts.bundle.js" type="text/javascript"></script>
+        <!--end::Base Scripts -->
+        <!--begin::Page Vendors -->
+        <script src="~/assets/vendors/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript"></script>
+        <!--end::Page Vendors -->
+        <!--begin::Page Snippets -->
+        <script src="~/assets/app/js/dashboard.js" type="text/javascript"></script>
+        <!--end::Page Snippets -->
+
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @RenderSection("Scripts", required: false)
+</body>
+</html>
