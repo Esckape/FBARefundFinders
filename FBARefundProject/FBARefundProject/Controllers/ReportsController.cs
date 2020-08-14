@@ -12,7 +12,7 @@ namespace FBARefundProject.Controllers
         public ActionResult Index(int SellerId)
         {
             ReportsViewModel model = new ReportsViewModel();
-            //TODO Get from DB
+            //TODO Get from Amazon
             model.SellerId = "ABS2322A";
             model.ReportsGridItems.Add(new ReportsGridItem()
             {
@@ -21,6 +21,18 @@ namespace FBARefundProject.Controllers
                 CaseId = 213123132,
                 CaseStatus = CaseStatuses.Success,
                 Details = "Units damaged in warehouse were never reimbursed",
+                Price = 400,
+                Quantity = 2,
+                FilledOn = DateTime.Now
+            });
+
+            model.ReportsGridItems.Add(new ReportsGridItem()
+            {
+                Actual = "",
+                AmazonStatus = AmazonStatuses.Closed,
+                CaseId = 123456,
+                CaseStatus = CaseStatuses.Success,
+                Details = "Test details",
                 Price = 400,
                 Quantity = 2,
                 FilledOn = DateTime.Now

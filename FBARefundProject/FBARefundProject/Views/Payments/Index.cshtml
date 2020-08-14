@@ -1,19 +1,15 @@
-﻿@using FBARefundProject.Models.Reports
-
-@model ReportsViewModel
-
-<div class="row bg-light-grey reports pad6  ">
+﻿<div class="row bg-light-grey reports pad6  ">
     <div class="col-sm-12 top-heading flex-center">
 
         <div class="reports-head">
-            <h1>Cases Opened</h1>
-            <h2>So before we can proceed please ensure you have linked your credit card</h2>
+            <h1>Payments</h1>
+            <h2>The table would have the summary of the payments done</h2>
         </div>
         <div class="seller-id">
             <div class="m-dropdown m-dropdown--inline m-dropdown--arrow" m-dropdown-toggle="hover" aria-expanded="true">
                 <a href="#" class="m-dropdown__toggle btn btn-brand dropdown-toggle">
                     <span>Seller ID</span><br>
-                   @Model.SellerId
+                    A13UOLPU26AEG7
                 </a>
                 <div class="m-dropdown__wrapper" style="z-index: 101;">
                     <span class="m-dropdown__arrow m-dropdown__arrow--left"></span>
@@ -36,6 +32,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 
@@ -43,31 +40,28 @@
     <div class="uni-table bg-wht border">
         <table class="table-responsive">
             <thead>
+            </thead>
             <tbody>
 
                 <tr class="border-b">
-                    <th>Filed</th>
-                    <th>Amazon Status</th>
-                    <th>Case Status</th>
-                    <th>Potential</th>
-                    <th>Actual</th>
-                    <th>Case Id</th>
+                    <th>Month</th>
+                    <th>Seller ID</th>
+                    <th>Reimbursements</th>
+                    <th>Due to FBA</th>
+                    <th>Status</th>
                     <th>Details</th>
                 </tr>
-                @foreach (var item in Model.ReportsGridItems)
-                {
-                    <tr class="border-b">
-                        <td>@item.FilledOn.ToShortDateString()</td>
-                        <td class="up-letter">@item.AmazonStatus.ToString()</td>
-                        <td class="pending">@item.CaseStatus.ToString()</td>
-                        <td>$@item.Price<br><b>Qty: @item.Quantity</b></td>
-                        <td>@item.Actual</td>
-                        <td>@item.CaseId</td>
-                        <td><b>@item.Details</b><br><a href="">Details</a></td>
-                    </tr>
-                }
+                <tr class="">
+                    <td class="up-letter">January</td>
+                    <td>A13UOLPU26AEG7 </td>
+                    <td class="success">$350</td>
+                    <td>$87.50</td>
+                    <td><span class="success-btn">Paid</span></td>
+                    <td>Reimbursement Recovery<br><a href="">See Invoice</a></td>
+
+                </tr>
             </tbody>
-            </thead>
+
         </table>
 
     </div>
