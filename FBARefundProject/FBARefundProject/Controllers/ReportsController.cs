@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FBARefundProject.AmazonMWS;
 using FBARefundProject.Models.Reports;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,6 +12,11 @@ namespace FBARefundProject.Controllers
     {
         public ActionResult Index(int SellerId)
         {
+
+            ReportsMWS mwsReports = new ReportsMWS();
+            mwsReports.GetSettlementReports(Reports.SettlementReports.XMLSettlementReport, "AM9XZDGJ7SL26");
+
+
             ReportsViewModel model = new ReportsViewModel();
             //TODO Get from Amazon
             model.SellerId = "ABS2322A";
